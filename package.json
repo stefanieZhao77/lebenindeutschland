@@ -1,0 +1,25 @@
+{
+    "name": "lebenindeutschland-crawler",
+    "version": "0.0.1",
+    "description": "A web crawler for lebenindeutschland.eu",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js",
+        "build": "docker build -t lebenindeutschland-crawler .",
+        "build:dev": "docker build -f Dockerfile.dev -t lebenindeutschland-crawler:dev .",
+        "up": "docker-compose up",
+        "down": "docker-compose down"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.27.2",
+        "cheerio": "^1.0.0-rc.12",
+        "epub-gen": "^0.1.0",
+        "pdfkit": "^0.13.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
+}
