@@ -21,10 +21,27 @@ jobs:
       run: npm install
     - name: Run index.js
       run: node src/index.js
-    - name: Upload EPUB artifact
-      uses: actions/upload-artifact@v2
+    
+    # Create Release
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: Leben_in_Deutschland
-        path: Leben_in_Deutschland.epub
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload EPUB
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: Leben_in_Deutschland.epub 
+        asset_name: Leben_in_Deutschland.epub  
+        asset_content_type: application/epub+zip
 
       

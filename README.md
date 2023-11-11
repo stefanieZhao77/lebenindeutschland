@@ -4,9 +4,7 @@ This project generates an EPUB file containing questions and answers about life 
 
 ## Generated EPUB File
 
-You can download it directly from the repository, or access it via this link:
-
-[Download EPUB](Leben_in_Deutschland.epub)
+Download the latest version of the EPUB file from our [Releases page](https://github.com/stefanieZhao77/lebenindeutschland/releases).
 
 
 ## Contributing
