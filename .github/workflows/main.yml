@@ -16,10 +16,15 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16.x'
+        node-version: '14.x'
     - name: Install dependencies
       run: npm install
     - name: Run index.js
       run: node src/index.js
+    - name: Upload EPUB artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Leben_in_Deutschland
+        path: Leben_in_Deutschland.epub
 
       
